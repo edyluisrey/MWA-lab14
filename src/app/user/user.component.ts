@@ -40,15 +40,15 @@ export class UserComponent implements OnInit {
   }
 
   getData(value){    
-	this.userService.getUser().subscribe(data=>{
-	  this.myForm.controls['name'].setValue(data.json().name);
-	  this.myForm.controls['email'].setValue(data.json().email);
-	 
-	});
+		this.userService.getUser().subscribe(data=>{
+		  this.myForm.controls['name'].setValue(data.json().name);
+		  this.myForm.controls['email'].setValue(data.json().email);
+		 
+		});
 
-	this.userService.getPost().subscribe(data=>{
-	  this.myForm.controls['post'].setValue(data.json()[0].body);
-	});
+		this.userService.getPost().subscribe(data=>{
+		  this.myForm.controls['post'].setValue(data.json()[0].body);
+		});
   }
 
 }
