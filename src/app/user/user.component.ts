@@ -17,6 +17,12 @@ import { UserService } from '../user.service';
     input.ng-invalid {
       border: 1px solid red;
     }
+    textarea.ng-invalid {
+      border: 1px solid red;
+    }
+    .alert-danger{
+    	color:red;
+    }
   `]
 })
 export class UserComponent implements OnInit {
