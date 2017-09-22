@@ -31,10 +31,14 @@ export class UserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private userService: UserService) { 
    	this.myForm = formBuilder.group({
       'name': ['', Validators.required],
-      'email': ['', [
-          Validators.required, Validators.email]],
-      'post': ['',[Validators.required, Validators.minLength(10)]] 
+      'email': ['', Validators.compose([
+          Validators.required, Validators.email])],
+      'post': ['',Validators.compose([Validators.required, Validators.minLength(10)])] 
     });
+
+    this.myForm.statusChanges.subscribe(
+      (data: any) => console.log("status: "+data)
+    );
 
   }
   
